@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipToPadding="false">
+
+    <include
+        android:id="@+id/app_header"
+        layout="@layout/app_header" />
+
+    <EditText
+        android:id="@+id/sign_up_user_edtx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_header"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rounded_bg_solid_light_gray"
+        android:hint="@string/username"
+        android:padding="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColorHint="@color/gray" />
+
+    <TextView
+        android:id="@+id/sign_up_user_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_up_user_edtx"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/input_error"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/dark_red"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/sign_up_pass_edtx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_up_user_error"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rounded_bg_solid_light_gray"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColorHint="@color/gray" />
+
+    <TextView
+        android:id="@+id/sign_up_pass_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_up_pass_edtx"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/input_error"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/dark_red"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/sign_up_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_up_pass_error"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rounded_bg_solid_light_green"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sign_up_login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_up_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/login"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_up_login_btn"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/terms_policy"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</RelativeLayout>

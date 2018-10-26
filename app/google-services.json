@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "236405040390",
+    "firebase_url": "https://chatapp-2c829.firebaseio.com",
+    "project_id": "chatapp-2c829",
+    "storage_bucket": "chatapp-2c829.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236405040390:android:b0535bd150a7cd71",
+        "android_client_info": {
+          "package_name": "com.mvopo.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236405040390-ukch7eh330tr7hulogpordi5k4uo6cjf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mvopo.chatapp",
+            "certificate_hash": "48b2bdf9d4cbc4bc11f58e2f99e3fd708e1f8097"
+          }
+        },
+        {
+          "client_id": "236405040390-5ulcplkjkas0lsc2rh66hlvm2hmohs6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkBtskwY-yQALA10Qc_O3KfApT3al30bc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236405040390-5ulcplkjkas0lsc2rh66hlvm2hmohs6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

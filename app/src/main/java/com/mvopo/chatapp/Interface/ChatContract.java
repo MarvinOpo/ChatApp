@@ -15,13 +15,14 @@ public class ChatContract {
         void notifyAdapter();
 
         void addMessage(ChatMessage message);
-        void setMessage(ArrayList<ChatMessage> messages);
 
         void showHomeFragment();
 
         void scrollToBottom();
 
         void clearMessageArea();
+
+        void hideKeyboard();
     }
 
     public interface chatAction{

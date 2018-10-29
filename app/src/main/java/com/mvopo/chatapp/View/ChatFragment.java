@@ -1,5 +1,6 @@
 package com.mvopo.chatapp.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -33,6 +35,12 @@ public class ChatFragment extends Fragment implements ChatContract.chatView {
 
     private ChatPresenter chatPresenter;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        hideKeyboard();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -43,8 +51,6 @@ public class ChatFragment extends Fragment implements ChatContract.chatView {
         chatPresenter = new ChatPresenter(this);
 
         int messageCount = messages.size();
-
-        Log.e("QWEQWE1",messageCount+"");
 
         btnLogout = view.findViewById(R.id.header_logout);
         btnLogout.setVisibility(View.VISIBLE);
@@ -109,15 +115,15 @@ public class ChatFragment extends Fragment implements ChatContract.chatView {
     }
 
     @Override
+    public void hideKeyboard() {
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+    }
+
+    @Override
     public void addMessage(ChatMessage message) {
         messages.add(message);
         notifyAdapter();
         scrollToBottom();
-    }
-
-    @Override
-    public void setMessage(ArrayList<ChatMessage> messages) {
-        this.messages.addAll(0, messages);
-        initAdapter();
     }
 }

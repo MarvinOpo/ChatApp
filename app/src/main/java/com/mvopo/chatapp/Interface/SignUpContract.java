@@ -20,7 +20,7 @@ public class SignUpContract {
         boolean isPassValid();
 
         void checkIfUserExist();
-        void addUserInDB();
+        void writeUserToDB();
 
         Fragment getChatFragment();
     }

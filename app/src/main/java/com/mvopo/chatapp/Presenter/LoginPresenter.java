@@ -88,7 +88,7 @@ public class LoginPresenter implements LoginContract.loginAction {
                         String password = (String) snapshot.child("password").getValue();
                         String passInput = LoginPresenter.this.password;
 
-                        if (passInput.equalsIgnoreCase(password)) {
+                        if (passInput.equals(password)) {
                             loginView.showChatFragment(getChatFragment());
                             return;
                         }

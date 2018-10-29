@@ -89,7 +89,7 @@ public class SignUpPresenter implements SignUpContract.signUpAction {
                     return;
                 }
 
-                addUserInDB();
+                writeUserToDB();
             }
 
             @Override
@@ -100,7 +100,7 @@ public class SignUpPresenter implements SignUpContract.signUpAction {
     }
 
     @Override
-    public void addUserInDB() {
+    public void writeUserToDB() {
         String key = usersRef.push().getKey();
         usersRef.child(key + "/username").setValue(username);
         usersRef.child(key + "/password").setValue(password);

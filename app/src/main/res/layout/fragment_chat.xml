@@ -11,10 +11,13 @@
     <ListView
         android:id="@+id/chat_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@id/bottom_line"
-        android:layout_below="@+id/app_header"
-        android:scrollbars="none" />
+        android:layout_below="@id/app_header"
+        android:divider="@null"
+        android:padding="5dp"
+        android:scrollbars="none"
+        android:stackFromBottom="true" />
 
     <View
         android:id="@+id/bottom_line"
@@ -35,6 +38,7 @@
         android:layout_toLeftOf="@+id/chat_send_btn"
         android:background="@drawable/rounded_bg_solid_light_gray"
         android:hint="@string/message_hint"
+        android:maxHeight="100dp"
         android:padding="10dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColorHint="@color/gray" />

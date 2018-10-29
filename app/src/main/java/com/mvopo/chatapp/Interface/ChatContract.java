@@ -16,7 +16,7 @@ public class ChatContract {
 
         void addMessage(ChatMessage message);
 
-        void showHomeFragment();
+        void showSignUpFragment();
 
         void scrollToBottom();
 

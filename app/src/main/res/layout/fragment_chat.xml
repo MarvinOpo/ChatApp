@@ -38,6 +38,7 @@
         android:layout_toLeftOf="@+id/chat_send_btn"
         android:background="@drawable/rounded_bg_solid_light_gray"
         android:hint="@string/message_hint"
+        android:inputType="textCapSentences"
         android:maxHeight="100dp"
         android:padding="10dp"
         android:textAppearance="?android:attr/textAppearanceSmall"

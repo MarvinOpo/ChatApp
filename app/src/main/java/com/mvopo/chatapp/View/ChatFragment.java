@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,9 @@ import com.mvopo.chatapp.R;
 import java.util.ArrayList;
 
 public class ChatFragment extends Fragment implements ChatContract.chatView {
+
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
 
     private Button btnLogout, btnSend;
     private ListView listView;
@@ -46,6 +51,7 @@ public class ChatFragment extends Fragment implements ChatContract.chatView {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chat, container, false);
 
+        fragmentManager = getActivity().getSupportFragmentManager();
         username = getArguments().getString("username");
         messages = new ArrayList<>();
         chatPresenter = new ChatPresenter(this);
@@ -100,8 +106,16 @@ public class ChatFragment extends Fragment implements ChatContract.chatView {
     }
 
     @Override
-    public void showHomeFragment() {
-        getActivity().getSupportFragmentManager().popBackStack();
+    public void addMessage(ChatMessage message) {
+        messages.add(message);
+        notifyAdapter();
+        scrollToBottom();
+    }
+
+    @Override
+    public void showSignUpFragment() {
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, new SignUpFragment()).commit();
     }
 
     @Override
@@ -118,12 +132,5 @@ public class ChatFragment extends Fragment implements ChatContract.chatView {
     public void hideKeyboard() {
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
-    }
-
-    @Override
-    public void addMessage(ChatMessage message) {
-        messages.add(message);
-        notifyAdapter();
-        scrollToBottom();
     }
 }

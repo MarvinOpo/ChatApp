@@ -58,7 +58,7 @@ public class ChatPresenter implements ChatContract.chatAction {
 
     @Override
     public void onLogoutClick() {
-        chatView.showHomeFragment();
+        chatView.showSignUpFragment();
     }
 
     @Override
